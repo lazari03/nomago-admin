@@ -31,9 +31,9 @@ services:
     image: postgres:14-alpine
     restart: unless-stopped
     environment:
-      POSTGRES_DB: strapi_db
+      POSTGRES_DB: postgres
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_PASSWORD: SgcCsOcfQA2tPqxUBWUJ0YR8086MJHnz4RZYfMUfPLRkJVPd558BryptTUUpU1YI
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
