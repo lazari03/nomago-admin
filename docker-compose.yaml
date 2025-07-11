@@ -7,11 +7,11 @@ services:
     env_file: .env
     environment:
       DATABASE_CLIENT: postgres
-      DATABASE_HOST: ${DATABASE_HOST}
-      DATABASE_PORT: ${DATABASE_PORT}
-      DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_USERNAME: ${DATABASE_USERNAME}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_HOST: postgresdb   # Must match the service name below
+      DATABASE_PORT: 5432
+      DATABASE_NAME: strapi_db
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: mysecretpassword
       API_TOKEN_SALT: ${API_TOKEN_SALT}
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
@@ -24,5 +24,21 @@ services:
       - ./public/uploads:/app/public/uploads
     ports:
       - "1337:1337"
+    depends_on:
+      - postgresdb
+
+  postgresdb:
+    image: postgres:14-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: strapi_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"  
+      
 volumes:
+  postgres-data:
   strapi-data:
