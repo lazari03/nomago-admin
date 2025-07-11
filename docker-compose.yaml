@@ -7,11 +7,11 @@ services:
     env_file: .env
     environment:
       DATABASE_CLIENT: postgres
-      DATABASE_HOST: postgresdb   # Must match the service name below
+      DATABASE_HOST: localhost   # Must match the service name below
       DATABASE_PORT: 5432
-      DATABASE_NAME: strapi_db
+      DATABASE_NAME: postgres
       DATABASE_USERNAME: postgres
-      DATABASE_PASSWORD: mysecretpassword
+      DATABASE_PASSWORD: SgcCsOcfQA2tPqxUBWUJ0YR8086MJHnz4RZYfMUfPLRkJVPd558BryptTUUpU1YI
       API_TOKEN_SALT: ${API_TOKEN_SALT}
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
