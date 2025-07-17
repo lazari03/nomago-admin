@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "listings",
+  "info": {
+    "singularName": "listing",
+    "pluralName": "listings",
+    "displayName": "Listing"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "propertyName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "listings"
+    }
+  }
+}
