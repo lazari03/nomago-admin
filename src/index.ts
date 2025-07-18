@@ -1,5 +1,11 @@
 // import type { Core } from '@strapi/strapi';
 
+console.log('S3_ACCESS_KEY_ID:', process.env.S3_ACCESS_KEY_ID);
+console.log('S3_SECRET_ACCESS_KEY:', process.env.S3_SECRET_ACCESS_KEY);
+console.log('S3_BUCKET:', process.env.S3_BUCKET);
+console.log('S3_ENDPOINT:', process.env.S3_ENDPOINT);
+console.log('S3_REGION:', process.env.S3_REGION);
+
 export default {
   /**
    * An asynchronous register function that runs before
