@@ -13,6 +13,27 @@
   "attributes": {
     "name": {
       "type": "string"
+    },
+    "surname": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "listing": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::listing.listing",
+      "inversedBy": "bookings"
     }
   }
 }
