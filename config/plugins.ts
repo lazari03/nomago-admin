@@ -13,7 +13,7 @@ export default () => ({
             Bucket: process.env.AWS_BUCKET,
           },
         },
-        // Ensure no double slashes and protocol is present
+        // Force correct MinIO path-style URLs
         baseUrl: `${process.env.AWS_ENDPOINT?.replace(/\/$/, '')}/${process.env.AWS_BUCKET}`,
       },
     },

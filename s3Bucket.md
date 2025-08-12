@@ -93,11 +93,14 @@ mc anonymous set download local/nomago-uploads
 
 ## 🔍 5. Example Access URL
 
+
 After uploading an image in Strapi, you can directly view it at:
 
 ```
 http://168.231.78.121:9000/nomago-uploads/<filename>
 ```
+
+**Important:** Do NOT use the bucket name as a subdomain (e.g., `http://nomago-uploads.168.231.78.121:9000/<filename>`). This will NOT work with MinIO and will result in broken URLs. Always use the format above, with the bucket name as a path segment.
 
 Example:
 
