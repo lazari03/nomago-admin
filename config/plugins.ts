@@ -13,7 +13,8 @@ export default () => ({
             Bucket: process.env.AWS_BUCKET,
           },
         },
-        baseUrl: process.env.AWS_ENDPOINT + '/' + process.env.AWS_BUCKET, // Add this line if supported
+        // Ensure no double slashes and protocol is present
+        baseUrl: `${process.env.AWS_ENDPOINT?.replace(/\/$/, '')}/${process.env.AWS_BUCKET}`,
       },
     },
   },
