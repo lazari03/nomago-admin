@@ -23,6 +23,12 @@
         "videos",
         "audios"
       ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "home_left_card"
     }
   }
 }

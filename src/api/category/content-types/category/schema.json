@@ -19,6 +19,18 @@
       "relation": "oneToMany",
       "target": "api::listing.listing",
       "mappedBy": "category"
+    },
+    "home_right_card": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::home-right-card.home-right-card",
+      "inversedBy": "categories"
+    },
+    "home_left_card": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::home-left-card.home-left-card",
+      "inversedBy": "categories"
     }
   }
 }
