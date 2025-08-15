@@ -4,7 +4,7 @@
   "info": {
     "singularName": "home-left-card",
     "pluralName": "home-left-cards",
-    "displayName": "HomeLeftCard"
+    "displayName": "homeLeftCard"
   },
   "options": {
     "draftAndPublish": true
@@ -14,15 +14,8 @@
     "title": {
       "type": "string"
     },
-    "poster": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "description": {
+      "type": "string"
     },
     "categories": {
       "type": "relation",

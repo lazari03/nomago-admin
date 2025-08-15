@@ -448,43 +448,9 @@ export interface ApiHomeLeftCardHomeLeftCard
   extends Struct.CollectionTypeSchema {
   collectionName: 'home_left_cards';
   info: {
-    displayName: 'HomeLeftCard';
+    displayName: 'homeLeftCard';
     pluralName: 'home-left-cards';
     singularName: 'home-left-card';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    categories: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::home-left-card.home-left-card'
-    > &
-      Schema.Attribute.Private;
-    poster: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomeRightCardHomeRightCard
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'home_right_cards';
-  info: {
-    displayName: 'HomeRightCard';
-    pluralName: 'home-right-cards';
-    singularName: 'home-right-card';
   };
   options: {
     draftAndPublish: true;
@@ -501,9 +467,43 @@ export interface ApiHomeRightCardHomeRightCard
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
+      'api::home-left-card.home-left-card'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomeRightCardHomeRightCard
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'home_right_cards';
+  info: {
+    displayName: 'homeRightCard';
+    pluralName: 'home-right-cards';
+    singularName: 'home-right-card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
       'api::home-right-card.home-right-card'
     > &
       Schema.Attribute.Private;
+    poster: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;

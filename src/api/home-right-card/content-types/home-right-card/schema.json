@@ -4,7 +4,7 @@
   "info": {
     "singularName": "home-right-card",
     "pluralName": "home-right-cards",
-    "displayName": "HomeRightCard"
+    "displayName": "homeRightCard"
   },
   "options": {
     "draftAndPublish": true
@@ -14,8 +14,15 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "string"
+    "poster": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
     "categories": {
       "type": "relation",
