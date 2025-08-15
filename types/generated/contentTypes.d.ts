@@ -436,6 +436,66 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHomeLeftCardHomeLeftCard
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'home_left_cards';
+  info: {
+    displayName: 'HomeLeftCard';
+    pluralName: 'home-left-cards';
+    singularName: 'home-left-card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-left-card.home-left-card'
+    > &
+      Schema.Attribute.Private;
+    poster: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomeRightCardHomeRightCard
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'home_right_cards';
+  info: {
+    displayName: 'HomeRightCard';
+    pluralName: 'home-right-cards';
+    singularName: 'home-right-card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-right-card.home-right-card'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiListingListing extends Struct.CollectionTypeSchema {
   collectionName: 'listings';
   info: {
@@ -987,6 +1047,8 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::booking.booking': ApiBookingBooking;
       'api::category.category': ApiCategoryCategory;
+      'api::home-left-card.home-left-card': ApiHomeLeftCardHomeLeftCard;
+      'api::home-right-card.home-right-card': ApiHomeRightCardHomeRightCard;
       'api::listing.listing': ApiListingListing;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

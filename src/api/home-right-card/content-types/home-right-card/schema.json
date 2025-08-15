@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_right_cards",
+  "info": {
+    "singularName": "home-right-card",
+    "pluralName": "home-right-cards",
+    "displayName": "HomeRightCard"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

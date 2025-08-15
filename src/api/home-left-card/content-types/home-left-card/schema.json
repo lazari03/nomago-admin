@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_left_cards",
+  "info": {
+    "singularName": "home-left-card",
+    "pluralName": "home-left-cards",
+    "displayName": "HomeLeftCard"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "poster": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
