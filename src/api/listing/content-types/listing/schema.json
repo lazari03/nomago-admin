@@ -52,6 +52,9 @@
       "target": "api::booking.booking",
       "mappedBy": "listing"
     },
+    "locationLink": {
+      "type": "richtext"
+    },
     "isFeatured": {
       "type": "boolean"
     }

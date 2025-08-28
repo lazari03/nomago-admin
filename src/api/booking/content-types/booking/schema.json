@@ -24,7 +24,7 @@
       "type": "string"
     },
     "startDate": {
-      "type": "date"
+      "type": "datetime"
     },
     "endDate": {
       "type": "date"
