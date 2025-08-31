@@ -6,7 +6,11 @@ export default [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['http://localhost:8081', '*'],
+      origin: [
+        'http://localhost:3000', // Next.js local dev
+        'http://localhost:8081', // React Native or other local dev
+        'http://xgs8swck0g8cgs8gcososwg8.168.231.78.121.sslip.io'
+      ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       headers: '*',
       credentials: true,
