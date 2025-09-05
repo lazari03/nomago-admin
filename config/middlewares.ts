@@ -5,7 +5,6 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
       origin: [
         'http://localhost:3000', // Next.js local dev
         'http://localhost:8081', // React Native or other local dev
